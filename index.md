@@ -4,15 +4,15 @@ layout: home
 
 hero:
   name: "My Awesome Project"
-  text: "A VitePress Site"
+  text: "A VitePress blog"
   tagline: My great project tagline
   actions:
     - theme: brand
-      text: Markdown Examples
+      text: 工作笔记
       link: /markdown-examples
     - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: 功能测试
+      link: /team
 
 features:
   - title: Feature A
@@ -22,4 +22,3 @@ features:
   - title: Feature C
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
 ---
-
