@@ -9,10 +9,10 @@ hero:
   actions:
     - theme: brand
       text: 工作笔记
-      link: /CRM-新建模块/markdown-examples
+      link: ./CRM-新建模块/markdown-examples
     - theme: alt
       text: 功能测试
-      link: /test/team
+      link: ./test/team
 
 features:
   - title: Feature A

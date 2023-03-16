@@ -9,28 +9,28 @@ export default defineConfig({
     outlineTitle: '大纲',
     // https://vitepress.vuejs.org/reference/default-theme-config
     nav: [
-      { text: '首页', link: '/' },
-      { text: '工作笔记', link: '/CRM-新建模块/markdown-examples' },
-      { text: '功能测试', link: '/test/team' }
+      { text: '首页', link: './' },
+      { text: '工作笔记', link: './CRM-新建模块/markdown-examples' },
+      { text: '功能测试', link: './test/team' }
     ],
 
     sidebar: {
-      '/CRM-新建模块': [
+      './CRM-新建模块': [
         {
           text: '文档列表',
           items: [
-            { text: 'Markdown Examples', link: '/CRM-新建模块/markdown-examples' },
-            { text: 'CRM新建模块', link: '/CRM-新建模块/新建模块组件设计' },
-            { text: '路由配置', link: '/CRM-新建模块/router-rules' }
+            { text: 'Markdown Examples', link: './CRM-新建模块/markdown-examples' },
+            { text: 'CRM新建模块', link: './CRM-新建模块/新建模块组件设计' },
+            { text: '路由配置', link: './CRM-新建模块/router-rules' }
           ]
         }
       ],
-      '/test': [
+      './test': [
         {
           text: '测试列表',
           items: [
-            { text: 'team', link: '/test/team' },
-            { text: 'team1', link: '/test/team2' }
+            { text: 'team', link: './test/team' },
+            { text: 'team1', link: './test/team2' }
           ]
         }
       ]
