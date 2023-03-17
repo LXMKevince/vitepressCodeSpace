@@ -12,6 +12,6 @@
     "docs:dev": "vitepress dev",
     "docs:build": "vitepress build --base /vitepressCodeSpace/ ",
     "docs:preview": "vitepress preview",
-    "pub": "git add . && git commit -m --desc `feat: ${desc}` && git push"
+    "pub": "git add . && git commit -m 'feat: atuo push' && git push"
   }
 }
