@@ -12,6 +12,6 @@
     "docs:dev": "vitepress dev",
     "docs:build": "vitepress build --base /vitepressCodeSpace/ ",
     "docs:preview": "vitepress preview",
-    "pub": "yarn docs:build && git add . && git commit -m 'feat: publish' && git push"
+    "pub": "git add . && git commit -m --desc `feat: ${desc}` && git push"
   }
 }
