@@ -21,7 +21,8 @@ export default defineConfig({
           items: [
             { text: 'Markdown Examples', link: '/CRM-新建模块/markdown-examples' },
             { text: 'CRM新建模块', link: '/CRM-新建模块/新建模块组件设计' },
-            { text: '路由配置', link: '/CRM-新建模块/router-rules' }
+            { text: '路由配置', link: '/CRM-新建模块/router-rules' },
+            { text: '插件测试', link: '/CRM-新建模块/plugin-test'}
           ]
         }
       ],
