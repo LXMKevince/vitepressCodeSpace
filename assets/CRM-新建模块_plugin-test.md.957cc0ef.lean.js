@@ -1,0 +1,1 @@
+import{_ as s,o as n,c as a,a as l}from"./app.c7493147.js";const C=JSON.parse('{"title":"插件测试","description":"","frontmatter":{},"headers":[],"relativePath":"CRM-新建模块/plugin-test.md","lastUpdated":1680580562000}'),p={name:"CRM-新建模块/plugin-test.md"},o=l("",10),t=[o];function e(c,r,F,y,D,i){return n(),a("div",null,t)}const f=s(p,[["render",e]]);export{C as __pageData,f as default};
