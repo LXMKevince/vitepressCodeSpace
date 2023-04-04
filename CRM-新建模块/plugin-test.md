@@ -78,3 +78,66 @@ export default {
 };
 
 ```
+
+```ts
+// vite-plugin-add-data-test.js
+
+const fs = require('fs');
+const { resolve } = require('path');
+
+function readConfigFile(configFile) {
+  const configFilePath = resolve(process.cwd(), configFile);
+  const config = fs.readFileSync(configFilePath, 'utf-8');
+  return JSON.parse(config);
+}
+
+function addDataTestPlugin(configFile, fileNames) {
+  // console.log('configFile, fileNames', configFile, fileNames);
+  let config = {};
+  let configContent = {}
+
+  return {
+    name: 'add-data-test',
+    configResolved(resolvedConfig) {
+      // 获取用户指定的配置文件和处理文件名称数组
+      config = readConfigFile(configFile);
+    },
+    async transform(code, id) {
+      // 判断当前处理文件是否在处理文件名称数组中
+      if (fileNames.includes(id)) {
+        // 读取配置文件内容，并存储在插件的上下文中
+        configContent = config;
+      }
+      return code;
+    },
+    transformIndexHtml(html) {
+      console.log('html', html);
+      // 判断是否需要添加 data-test 属性
+      // const keys = Object.keys(configContent);
+      // if (keys.some((key) => html.includes(key))) {
+      //   // 遍历所有包含配置文件 key 的标签，为它们添加 data-test 属性
+      //   const regex = new RegExp(`(${keys.join('|')})="([^"]+)"`, 'g');
+      //   html = html.replace(regex, (match, key, value) => {
+      //     return `${match} data-test="${value}"`;
+      //   });
+      // }
+      // console.log('html', html);
+      // return html;
+      const $ = cheerio.load(html);
+      Object.entries(config).forEach(([key, value]) => {
+        const selector = `[${key}]`;
+        const elements = $(selector);
+        if (elements.length === 0) {
+          console.warn(`No element matches the selector: ${selector}`);
+        } else {
+          elements.attr('data-test', value);
+        }
+      });
+      return $.html();
+    },
+  };
+}
+
+module.exports = addDataTestPlugin;
+
+```

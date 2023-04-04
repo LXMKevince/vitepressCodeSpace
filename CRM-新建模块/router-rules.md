@@ -1,5 +1,20 @@
 # CRM路由规格整理
 
+```ts
+'/detail/:id/:tabKey'
+'/detail/:customerId',
+'/detail/businessChance/:chanceId'
+'/add/:id?'
+'/form/:id?'
+'/detail/:detailId/customer/:customerId'
+'/detail/:id/:tab?'
+'/detail/:type/:id'
+```
+
+新规则：新建不带参数用/add，带参数用查询字符串方式/add?
+      编辑不带参数/edit/:id，带参数/edit/:id?
+      跳转其他单据新建，遵循上面结构，需要区别使用相应查询字符传方式
+
 ## 单页面
 
 ```ts
@@ -28,7 +43,7 @@
       },
       // 新建
       {
-        path: '/add/:id?',
+        path: '/add?',
         component: lazy( () => import( '@/pages/b/add' ) )
       },
       // 编辑
@@ -36,6 +51,7 @@
         path: '/edit/:id?',
         component: lazy( () => import( '@/pages/b/add' ) )
       },
+
     ]
   }
 
